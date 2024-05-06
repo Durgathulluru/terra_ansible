@@ -5,7 +5,7 @@ ami_id = "ami-080e1f13689e07408"
 vpc_id = "vpc-00ad6a223561e5e0d"
 ssh_user = "ubuntu"
 key_name = "keypair"
-private_key_path = "/home/labsuser/ansible/keypair"
+private_key_path = "keypair.pem"
 }
 # provider details
 
