@@ -52,4 +52,16 @@ resource "aws_instance" "project1" {
           tags= {
              name= "worker-node"
              }
+//Local-exec Provisioner Block - create an Ansible Dynamic Inventory
+  provisioner "local-exec" {
+    command = "sudo echo ${self.public_ip} > myhosts"
+  }
+}
+
+// aws-instance public-ip_address
+
+output "public_ips" {
+description = "List of private IP addresses assigned to instances"
+value       = aws_instance.project1.*.public_ip
+
 }
